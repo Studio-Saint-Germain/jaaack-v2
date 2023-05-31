@@ -6,14 +6,15 @@ import localFont from 'next/font/local';
 const inter = Inter({ subsets: ['latin'] })
 const satoshi = localFont({
   src: './assets/fonts/satoshi/Satoshi-Variable.woff2',
-  display: 'swap',
 });
+
+interface RootLayoutProps {
+  children: React.ReactNode
+}
 
 export default function RootLayout({
   children,
-}: {
-  children: React.ReactNode
-}) {
+}: RootLayoutProps) {
   return (
     <html lang="fr">
       <body className={satoshi.className}>

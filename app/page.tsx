@@ -13,6 +13,7 @@ export default function Home() {
         <Image 
           src="/logo.png"
           width="200"
+          className='invert'
           height="200"
           alt="Jaack logo"
           />
