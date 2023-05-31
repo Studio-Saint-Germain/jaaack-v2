@@ -12,7 +12,7 @@ export default function Home() {
       <main className="flex min-h-screen flex-col items-center justify-between p-24">
         <Image 
           src="/logo.png"
-          width="200"
+          width="600"
           className='invert'
           height="200"
           alt="Jaack logo"
