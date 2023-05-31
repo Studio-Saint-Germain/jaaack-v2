@@ -13,16 +13,20 @@ export default function Navigation({children, className}: NavigationProps) {
   return (
     <header className={`${className} md:w-24 md:h-screen md:fixed md:top-0 py-4 md:bg-white md:bg-opacity-50`}>
       <nav>
-      {AppRoutes.map( (route: AppRoute) => (
-          <Link href={route.path} key={route.label}>{route.label}</Link>
-      ))}
+        <ul>
+          {AppRoutes.map( (route: AppRoute) => (
+            <li key={route.label}>
+              <Link href={route.path}>{route.label}</Link>
+            </li>
+          ))}
+        </ul>
       </nav>
       <Link href="/">
         <Image
           src="/logo.png"
           alt="Jaaack Logo"
           className="invert max-w-none"
-          width={160}
+          width={180}
           height={24}
           priority
         />
