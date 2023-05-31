@@ -1,5 +1,5 @@
 import { Inter } from 'next/font/google'
-import Navigation from './components/navigation/navigation'
+import Navigation from './components/header/header'
 import './globals.css';
 import localFont from 'next/font/local';
 
