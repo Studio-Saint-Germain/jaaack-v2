@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Footer from './components/footer/footer'
-import { projectsApi } from './api/projects';
+import { projectsApi } from './about/api/projects';
 import Link from 'next/link';
 
 export const metadata = {
@@ -10,7 +10,7 @@ export const metadata = {
 
 export default async function Home() {
   const highlightedProjects = await projectsApi.getHighlightedProjects();
-  
+
   return (
     <>
       <main className="flex min-h-screen flex-col items-center justify-center p-24">
