@@ -9,7 +9,7 @@ export const metadata = {
 
 export default async function Home() {
   const highlightedProjects = await projectsApi.getHighlightedProjects();
-
+  console.log(highlightedProjects)
   return (
     <>
       <main className="flex min-h-screen flex-col items-center justify-center p-24">

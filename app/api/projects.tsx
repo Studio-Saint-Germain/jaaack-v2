@@ -5,6 +5,7 @@ export interface Project {
     id: number;
     date: Date;
     status: 'publish';
+    slug: string;
     title: {
         rendered: string;
     },
