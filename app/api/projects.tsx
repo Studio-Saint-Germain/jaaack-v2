@@ -40,9 +40,9 @@ async function getHighlightedProjects(): Promise<Project[]> {
     return highlightedProjects;
 }
 
-async function getProject(id: number): Promise<Project> {
+async function getProjectBySlug(slug: string): Promise<Project> {
     const res = await getProjects();
-    const project = res.find((project: Project) => project.id === id);
+    const project = res.find((project: Project) => project.slug === slug);
     if (project === undefined) {
         throw new Error('Project not found');
     }
@@ -51,5 +51,6 @@ async function getProject(id: number): Promise<Project> {
 
 export const projectsApi = {
     getProjects,
-    getHighlightedProjects
+    getHighlightedProjects,
+    getProjectBySlug
 }
