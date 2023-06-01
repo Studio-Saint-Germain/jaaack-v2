@@ -20,7 +20,7 @@ export default function VideoPlayer({ videoInfos }: VideoPlayerProps) {
     return (
         <div className={`!w-full !h-screen ${ showDetails ? 'flex' : ''}`}>
             <div className={`${ showDetails ? 'bg-white pl-6' : ''} md:relative !w-full !h-screen`}>
-                <ReactPlayer volume={0.5} muted={false} loop={true} responsive playing={playing} className="!w-full !h-full" url={videoInfos.url} />
+                <ReactPlayer volume={0.5} muted={false} loop={true} responsive="true" playing={playing} className="!w-full !h-full" url={videoInfos.url} />
             </div>
             { videoInfos.description && videoInfos.title && showDetails &&
                 <div className='bg-white h-full overflow-auto p-6 pb-20 text-right'>

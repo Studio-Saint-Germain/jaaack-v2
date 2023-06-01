@@ -1,15 +1,33 @@
 export interface Page {
-    id: number,
-    date: Date,
-    slug: string,
+    id: number;
+    date: Date;
+    slug: string;
     title: {
         rendered: string;
     },
     content: {
-        rendered: string,
+        rendered: string;
     },
-    featured_media: number,
-    acf: [],
+    featured_media: number;
+    background_image: string;
+    acf: [];
+    _embedded: {
+        'wp:featuredmedia': [
+            {
+                title: {
+                    rendered: string;
+                },
+                media_details: {
+                    sizes: {
+                        full: {
+                            source_url: string;
+                        }
+                    }
+                }
+            }
+        ]
+
+    }
 }
 
 async function getPages(): Promise<Page[]> {
@@ -22,7 +40,7 @@ async function getPages(): Promise<Page[]> {
   }
 
   async function getPageById(id: number): Promise<Page> {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_WORDPRESS_API_ENDPOINT}/pages/${id}`);
+    const res = await fetch(`${process.env.NEXT_PUBLIC_WORDPRESS_API_ENDPOINT}/pages/${id}?_embed`);
     if (!res.ok) {
       throw new Error('Failed to fetch data');
     }
