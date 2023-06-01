@@ -15,7 +15,7 @@ export default function Header({children, className}: HeaderProps) {
   const pathname = usePathname();
   const isHomePage = pathname === "/";
   return (
-    <header className={`${className ? className : ''} ${isHomePage ? '' : 'md:border-r md:border-black md:border-solid md:bg-white'} md:w-24 md:h-screen md:fixed md:top-0 py-4 md:flex md:flex-col md:justify-between`}>
+    <header className={`${className ? className : ''} md:border-r md:border-solid ${isHomePage ? 'md:border-white' : 'md:border-black md:bg-white'} md:w-24 md:h-screen md:fixed md:top-0 py-4 md:flex md:flex-col md:justify-between`}>
       <NavigationMenu isHomePage={isHomePage} />
       <Link href="/">
         <Image
