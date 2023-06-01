@@ -1,3 +1,4 @@
+import { config } from "process";
 import Footer from "../components/footer/footer"
 
 export const metadata = {
@@ -5,7 +6,7 @@ export const metadata = {
   description: 'Jack Antoine Charlot is a french director.',
 }
 
-export default function Contact() {
+export default async function Contact() {
   return (
     <>
       <main className="min-h-screen p-16 md:pl-24 md:mr-">
