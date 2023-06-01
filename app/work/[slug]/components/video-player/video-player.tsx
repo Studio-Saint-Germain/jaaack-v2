@@ -28,9 +28,9 @@ export default function VideoPlayer({ videoInfos }: VideoPlayerProps) {
                     <div className="text-sm" dangerouslySetInnerHTML={{__html: videoInfos.description}}></div>
                 </div>
             }
-            <div className={`md:!w-full pointer-events-none md:!h-full md:absolute md:top-0 md:flex md:flex-col md:items-start md:justify-between p-6 ${showDetails ? 'text-black' : 'text-white'}`}>
+            <div className={`md:!w-full pointer-events-none md:!h-full md:absolute md:top-0 md:flex md:flex-col md:items-start md:justify-between p-6 pb-0 ${showDetails ? 'text-black' : 'text-white'}`}>
                     <a className="text-2xl cursor-pointer pointer-events-auto" onClick={() => router.back()}>Back</a>
-                    <div className="md:flex md:justify-between w-full">
+                    <div className={`md:flex md:justify-between w-full md:py-6 ${ showDetails ? 'md:bg-white' : ''}`}>
                         <a className="text-2xl cursor-pointer pointer-events-auto" onClick={() => setPlaying(!playing)}>{playing ? 'Pause' : 'Play'} video</a>
                         <a className="text-2xl cursor-pointer pointer-events-auto" onClick={() => setShowDetails(!showDetails)}>Infos</a>
                     </div>
