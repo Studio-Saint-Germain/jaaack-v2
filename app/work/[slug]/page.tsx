@@ -2,8 +2,9 @@ import { projectsApi } from "@/app/about/api/projects";
 import React from 'react';
 import VideoPlayer from "./components/video-player/video-player";
 
+
+
 export default async function ProjectSingle({ params }: any) {
-  console.log(params);
   const project = await projectsApi.getProjectBySlug(params.slug);
   const videoUrl = project.acf.vimeo_link.url;
   const title = project.title.rendered;
@@ -23,4 +24,9 @@ export default async function ProjectSingle({ params }: any) {
       </main>
     </>
   )
+}
+
+export const metadata = {
+  title: 'Jack Antoine Charlot - French Director - Work',
+  description: 'Jack Antoine Charlot is a french director.',
 }
