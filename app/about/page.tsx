@@ -1,3 +1,5 @@
+import Link from "next/link";
+import { pagesApi } from "../api/pages"
 import Footer from "../components/footer/footer"
 
 export const metadata = {
@@ -5,11 +7,19 @@ export const metadata = {
   description: 'Jack Antoine Charlot is a french director.',
 }
 
-export default function About() {
+const ABOUT_PAGE_ID = 16;
+
+export default async function About() {
+  const pageData = await pagesApi.getPageById(ABOUT_PAGE_ID);
+
   return (
     <>
-      <main className="min-h-screen p-16 md:ml-24 md:mr-">
-        <h1 className="text-[180px] leading-tight text-white font-bold text-right">Hi, I’m <br/>Jaaack.</h1>
+      <main className="p-16 md:ml-24">
+        <h1 className="page-title mt-16 md:mt-0 md:max-w-[80%] md:ml-[20%] text-white text-right leading-none font-semibold" dangerouslySetInnerHTML={{__html: pageData.title.rendered}}></h1>
+        <div className="text-white text-right mt-16 text-xl font-light" dangerouslySetInnerHTML={{__html: pageData.content.rendered}}></div>
+        <div className="text-right mt-16">
+          <Link className="text-3xl text-white underline" href='/contact'>Contact & booking</Link>
+        </div>
       </main>
       <Footer />
     </>

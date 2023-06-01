@@ -32,3 +32,25 @@ body {
 .description p {
   @apply mb-3 text-sm;
 }
+
+.page-title {
+  font-size: clamp(4rem, 12vw, 10rem); 
+}
+.page-description h2 {
+  @apply text-3xl mb-8 leading-normal;
+}
+
+.page-description p {
+  @apply mb-4 leading-loose;
+}
+.page-description strong {
+  @apply font-bold;
+}
+
+.link-container:hover .link-item {
+  opacity: 0.2;
+}
+
+.link-container .link-item:hover {
+  opacity: 1;
+}

@@ -1,7 +1,6 @@
-import Image from 'next/image'
-import Footer from './components/footer/footer'
-import { projectsApi } from './api/projects';
 import Link from 'next/link';
+import { projectsApi } from './api/projects';
+import Footer from './components/footer/footer';
 
 export const metadata = {
   title: 'Jack Antoine Charlot | French Director',
@@ -14,13 +13,17 @@ export default async function Home() {
   return (
     <>
       <main className="flex min-h-screen flex-col items-center justify-center p-24">
-        {highlightedProjects.map((project) => (
-          <Link href={`/work/${project.slug}`} key={project.id}>
-            <p dangerouslySetInnerHTML={{ __html: project.title.rendered }} key={project.id} className='text-white text-xl font-bold cursor-pointer'></p>
-          </Link>
-        ))}
+        <ul className='link-container'>
+          {highlightedProjects.map((project) => (
+            <li className='link-item' key={project.id}>
+              <Link href={`/work/${project.slug}`}>
+                <p dangerouslySetInnerHTML={{ __html: project.title.rendered }} key={project.id} className='text-white text-center text-xl font-bold cursor-pointer'></p>
+              </Link>
+            </li>
+          ))}
+        </ul>
       </main>
-      <Footer />
+      <Footer className='absolute' />
     </>
   )
 }
