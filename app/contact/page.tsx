@@ -1,4 +1,3 @@
-import { config } from "process";
 import Footer from "../components/footer/footer"
 
 export const metadata = {
