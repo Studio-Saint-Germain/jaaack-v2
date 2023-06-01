@@ -27,7 +27,7 @@ export default function Header({className}: HeaderProps) {
           priority
         />
       </Link>
-      <div onClick={() => setDisplayMobileMenu(!displayMobileMenu)} className="text-white block md:hidden">
+      <div onClick={() => setDisplayMobileMenu(!displayMobileMenu)} className="text-white md:hidden cursor-pointer">
         MENU
       </div>
     </header>

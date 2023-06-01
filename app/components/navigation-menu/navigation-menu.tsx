@@ -25,7 +25,7 @@ export default function NavigationMenu({children, className, closeMobileMenu, is
       <Link onClick={() => closeMobileMenu && closeMobileMenu()} className={`p-4 text-lg uppercase cursor-pointer absolute top-4 right-4`} href={'/'}>Close</Link>
       </li>
         {AppRoutes.map( (route: AppRoute) => (
-          <li key={route.label} className="my-4 md:mx-0 md:flex md:items-center md:justify-center">
+          <li key={route.label} className="my-4 md:my-0 md:flex md:items-center md:justify-center">
             <Link onClick={() => closeMobileMenu && closeMobileMenu()} className={`md:text-b-to-t p-4 uppercase ${isHomePage ? 'md:text-white' : ''} cursor-pointer ${pathname == route.path ? "font-semibold" : ""}`} href={route.path}>{route.label}</Link>
           </li>
         ))}
