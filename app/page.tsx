@@ -12,17 +12,9 @@ export default async function Home() {
 
   return (
     <>
-      <main className="flex min-h-screen flex-col items-center justify-between p-24">
-        <Image 
-          src="/logo.png"
-          width="600"
-          className='invert'
-          height="200"
-          alt="Jaack logo"
-          />
-
+      <main className="flex min-h-screen flex-col items-center justify-center p-24">
         {highlightedProjects.map((project) => (
-          <p key={project.id}>{project.title.rendered}</p>
+          <p dangerouslySetInnerHTML={{ __html: project.title.rendered }} key={project.id} className='text-white text-xl font-bold cursor-pointer'></p>
         ))}
       </main>
       <Footer />

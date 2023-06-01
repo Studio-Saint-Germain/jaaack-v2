@@ -29,18 +29,26 @@ async function getProjects(): Promise<Project[]> {
     if (!res.ok) {
       throw new Error('Failed to fetch data');
     }
-   
-    return res.json();
+    const json = res.json();
+    return json;
   }
 
 async function getHighlightedProjects(): Promise<Project[]> {
     const res = await getProjects();
-    const highlightedProjects =  res.filter((project: Project) => project.categories.includes(HIGHLIGHTED_CATEGORY_ID));
+    const highlightedProjects = res.filter((project: Project) => project.categories.includes(HIGHLIGHTED_CATEGORY_ID));
     return highlightedProjects;
+}
+
+async function getProject(id: number): Promise<Project> {
+    const res = await getProjects();
+    const project = res.find((project: Project) => project.id === id);
+    if (project === undefined) {
+        throw new Error('Project not found');
+    }
+    return project;
 }
 
 export const projectsApi = {
     getProjects,
     getHighlightedProjects
-
 }
