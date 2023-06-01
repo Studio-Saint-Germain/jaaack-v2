@@ -1,25 +1,22 @@
 import { projectsApi } from "@/app/about/api/projects";
 import React from 'react';
-import VideoPlayer from "./components/video-player/video-player";
+import VideoPlayer, { VideoInfos } from "./components/video-player/video-player";
 
 
 
 export default async function ProjectSingle({ params }: any) {
   const project = await projectsApi.getProjectBySlug(params.slug);
-  const videoUrl = project.acf.vimeo_link.url;
-  const title = project.title.rendered;
-  const description = project.content.rendered;
+  const videoInfos: VideoInfos = {
+    url: project.acf.vimeo_link.url,
+    description: project.content.rendered,
+    title: project.title.rendered,
+  }
+
   return (
     <>
       <main className="flex min-h-screen flex-col items-center justify-between md:ml-24 relative">
-        { videoUrl &&
-          <VideoPlayer url={videoUrl} />
-        }
-        { title &&
-          <h1 className="text-4xl text-white" dangerouslySetInnerHTML={{__html: title}}></h1>
-        }
-        { description &&
-          <div className="text-white" dangerouslySetInnerHTML={{__html: description}}></div>
+        { videoInfos && videoInfos.url && videoInfos.description && videoInfos.title &&
+          <VideoPlayer videoInfos={videoInfos}/>
         }
       </main>
     </>
