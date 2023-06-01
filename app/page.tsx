@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Footer from './components/footer/footer'
-import { projectsApi } from './about/api/projects';
+import { projectsApi } from './api/projects';
 import Link from 'next/link';
 
 export const metadata = {

@@ -26,7 +26,7 @@ export interface Project {
 }
 
 async function getProjects(): Promise<Project[]> {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_WORDPRESS_API_ENDPOINT}/projects`);
+    const res = await fetch(`${process.env.NEXT_PUBLIC_WORDPRESS_API_ENDPOINT}/projects`, { next: { revalidate: 10 } });
     if (!res.ok) {
       throw new Error('Failed to fetch data');
     }

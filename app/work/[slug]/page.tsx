@@ -1,4 +1,4 @@
-import { projectsApi } from "@/app/about/api/projects";
+import { projectsApi } from "@/app/api/projects";
 import React from 'react';
 import VideoPlayer, { VideoInfos } from "./components/video-player/video-player";
 
