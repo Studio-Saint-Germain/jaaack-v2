@@ -2,31 +2,34 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
 import NavigationMenu from '../navigation-menu/navigation-menu';
 import { usePathname } from 'next/navigation';
 
 interface HeaderProps {
-    children?: React.ReactNode;
     className?: string;
 }
 
-export default function Header({children, className}: HeaderProps) {
+export default function Header({className}: HeaderProps) {
   const pathname = usePathname();
   const isHomePage = pathname === "/";
+  const [displayMobileMenu, setDisplayMobileMenu] = useState(false);
   return (
-    <header className={`${className ? className : ''} md:border-r md:border-solid ${isHomePage ? 'md:border-white' : 'md:border-black md:bg-white'} md:w-24 md:h-screen md:fixed md:top-0 py-4 md:flex md:flex-col md:justify-between`}>
-      <NavigationMenu isHomePage={isHomePage} />
+    <header className={`${className ? className : ''} flex items-center w-[calc(100%_-_32px)] md:border-r md:border-solid ${isHomePage ? 'border-white' : 'md:border-black md:bg-white'} md:w-24 md:h-screen fixed md:top-0 py-4 md:flex-col md:items-stretch justify-between`}>
+      <NavigationMenu closeMobileMenu={() => setDisplayMobileMenu(!displayMobileMenu)} isVisible={displayMobileMenu} isHomePage={isHomePage} />
       <Link href="/">
         <Image
           src="/logo.png"
           alt="Jaaack Logo"
-          className={`${isHomePage ? 'invert' : ''} max-w-none md:desktop-vertical-logo`}
+          className={`invert ${isHomePage ? 'invert' : 'md:invert-0'} max-w-none md:desktop-vertical-logo`}
           width={180}
           height={24}
           priority
         />
       </Link>
+      <div onClick={() => setDisplayMobileMenu(!displayMobileMenu)} className="text-white block md:hidden">
+        MENU
+      </div>
     </header>
   )
 }
