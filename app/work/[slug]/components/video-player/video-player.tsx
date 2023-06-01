@@ -24,8 +24,8 @@ export default function VideoPlayer({ videoInfos }: VideoPlayerProps) {
             </div>
             { videoInfos.description && videoInfos.title && showDetails &&
                 <div className='bg-white h-full overflow-auto p-6 pb-20 text-right'>
-                    <h1 className="text-4xl mb-6" dangerouslySetInnerHTML={{__html: videoInfos.title}}></h1>
-                    <div className="text-sm" dangerouslySetInnerHTML={{__html: videoInfos.description}}></div>
+                    <h1 className="text-2xl font-bold mb-6" dangerouslySetInnerHTML={{__html: videoInfos.title}}></h1>
+                    <div className="text-sm description" dangerouslySetInnerHTML={{__html: videoInfos.description}}></div>
                 </div>
             }
             <div className={`md:!w-full pointer-events-none md:!h-full md:absolute md:top-0 md:flex md:flex-col md:items-start md:justify-between p-6 pb-0 ${showDetails ? 'text-black' : 'text-white'}`}>

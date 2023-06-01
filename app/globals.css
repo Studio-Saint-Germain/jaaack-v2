@@ -28,3 +28,7 @@ body {
     transform: translate3d(-23%,-100%,0) rotate(-90deg);
   }
 }
+
+.description p {
+  @apply mb-3 text-sm;
+}
