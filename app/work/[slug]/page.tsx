@@ -1,6 +1,7 @@
 import { projectsApi } from "@/app/api/projects";
-import React from 'react';
+import React, { Suspense } from 'react';
 import VideoPlayer, { VideoInfos } from "./components/video-player/video-player";
+import Loading from "./loading";
 
 
 
@@ -15,9 +16,9 @@ export default async function ProjectSingle({ params }: any) {
   return (
     <>
       <main className="flex min-h-screen flex-col items-center justify-between md:ml-24 relative">
-        { videoInfos && videoInfos.url && videoInfos.description && videoInfos.title &&
+        <Suspense fallback={<Loading />}>
           <VideoPlayer videoInfos={videoInfos}/>
-        }
+        </Suspense>
       </main>
     </>
   )

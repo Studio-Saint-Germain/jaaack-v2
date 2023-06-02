@@ -2,7 +2,7 @@
 
 import { Project, projectsApi } from '@/app/api/projects';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 
 export default function HighlightedProjects() {
@@ -11,14 +11,14 @@ export default function HighlightedProjects() {
   const [background, setBackground] = useState<string>();
   const [initialBackground, setInitialBackground] = useState<string>('');
 
-  const getHighlightedProjects = async () => {
+  const getHighlightedProjects = useCallback( async () => {
     const projects = await projectsApi.getHighlightedProjects();
     setHighlightedProjects(projects);
-  };
+  }, [setHighlightedProjects]);
 
   useEffect(() => {
     getHighlightedProjects();
-  }, []);
+  }, [getHighlightedProjects]);
 
   return (
     <>
