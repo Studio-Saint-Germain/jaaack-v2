@@ -23,7 +23,7 @@ export default function VideoPlayer({ videoInfos }: VideoPlayerProps) {
                 <ReactPlayer volume={0.5} muted={false} loop={true} responsive="true" playing={playing} className="!w-full !h-full" url={videoInfos.url} />
             </div>
             { videoInfos.description && videoInfos.title && showDetails &&
-                <div className='bg-white h-full overflow-auto p-6 pb-20 text-right'>
+                <div className='bg-white h-full overflow-auto p-6 pb-20 text-right max-w-[360px]'>
                     <h1 className="text-2xl font-bold mb-6" dangerouslySetInnerHTML={{__html: videoInfos.title}}></h1>
                     <div className="text-sm description" dangerouslySetInnerHTML={{__html: videoInfos.description}}></div>
                 </div>
