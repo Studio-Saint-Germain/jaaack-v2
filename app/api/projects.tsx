@@ -21,12 +21,12 @@ export interface Project {
             url: string;
             target: string;
         },
-        video_gif: number;
+        video_gif: string;
     },
 }
 
 async function getProjects(): Promise<Project[]> {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_WORDPRESS_API_ENDPOINT}/projects`, { next: { revalidate: 600 } });
+    const res = await fetch(`${process.env.NEXT_PUBLIC_WORDPRESS_API_ENDPOINT}/projects?_embed&acf_format=standard`, { next: { revalidate: 600 } });
     if (!res.ok) {
       throw new Error('Failed to fetch data');
     }

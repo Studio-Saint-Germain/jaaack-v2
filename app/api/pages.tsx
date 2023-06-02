@@ -9,7 +9,7 @@ export interface Page {
         rendered: string;
     },
     featured_media: number;
-    background_image: string;
+    background_image?: string;
     acf: [];
     _embedded: {
         'wp:featuredmedia': [
@@ -26,7 +26,6 @@ export interface Page {
                 }
             }
         ]
-
     }
 }
 
@@ -44,8 +43,13 @@ async function getPages(): Promise<Page[]> {
     if (!res.ok) {
       throw new Error('Failed to fetch data');
     }
-    const json = res.json();
-    return json;
+    const json = await res.json() as Page;
+    let page = json;
+    if (json._embedded['wp:featuredmedia']) {
+        page = {...json, background_image: json._embedded['wp:featuredmedia'][0].media_details.sizes.full.source_url };
+    }
+    console.log(page);
+    return page;
   }
 
 
