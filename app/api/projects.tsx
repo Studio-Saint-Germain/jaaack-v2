@@ -25,8 +25,12 @@ export interface Project {
     },
 }
 
-async function getProjects(): Promise<Project[]> {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_WORDPRESS_API_ENDPOINT}/projects?_embed&acf_format=standard`, { next: { revalidate: 600 } });
+async function getProjects(extraParams?: string[]): Promise<Project[]> {
+    let params = '';
+    if (extraParams) {
+        params = `?${extraParams.join('&')}`;
+    };
+    const res = await fetch(`${process.env.NEXT_PUBLIC_WORDPRESS_API_ENDPOINT}/projects${params}`, { next: { revalidate: 600 } });
     if (!res.ok) {
       throw new Error('Failed to fetch data');
     }
@@ -35,7 +39,7 @@ async function getProjects(): Promise<Project[]> {
   }
 
 async function getHighlightedProjects(): Promise<Project[]> {
-    const res = await getProjects();
+    const res = await getProjects(['acf_format=standard']);
     const highlightedProjects = res.filter((project: Project) => project.categories.includes(HIGHLIGHTED_CATEGORY_ID));
     return highlightedProjects;
 }
