@@ -22,7 +22,7 @@ export default function HighlightedProjects() {
 
   return (
     <>
-      <main className="flex min-h-screen flex-col items-center justify-center p-24 !bg-cover" style={background ? {backgroundImage: `url(${background})`} : {}}>
+      <main className="flex min-h-screen flex-col items-center justify-center p-24 !bg-cover !bg-center" style={background ? {backgroundImage: `url(${background})`} : {}}>
         <ul className='link-container' onMouseLeave={() => setBackground(initialBackground)}>
           {highlightedProjects && highlightedProjects.map((project) => (
             <li className='link-item' key={project.id} onMouseEnter={() => setBackground(project.acf.video_gif)} onMouseLeave={() => setBackground('')}>
