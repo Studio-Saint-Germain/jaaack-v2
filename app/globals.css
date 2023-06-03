@@ -17,6 +17,7 @@ body {
     )
     rgb(var(--background-start-rgb)); */
   background: rgb(var(--foreground-rgb));;
+  font-weight: light;
 }
 
 @layer utilities {
@@ -44,7 +45,7 @@ body {
   @apply mb-4 leading-loose;
 }
 .page-description strong {
-  @apply font-bold;
+  @apply font-semibold;
 }
 
 .link-container:hover .link-item {
@@ -53,4 +54,8 @@ body {
 
 .link-container .link-item:hover {
   opacity: 1;
+}
+
+a, p {
+  @apply font-light;
 }

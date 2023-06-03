@@ -17,7 +17,7 @@ export default function NavigationMenu({ closeMobileMenu, isVisible}: Navigation
   const isHomePage = pathname === "/";
   return (
     <nav className={`bg-white md:bg-transparent fixed md:relative w-full md:w-auto h-full md:h-auto top-0 md:top-unset z-10 md:z-auto transition-all duration-200 ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'} md:translate-x-0 md:opacity-100`}>
-      <ul className="flex h-full text-4xl md:text-lg flex-col items-center justify-center md:h-auto md:flex-col-reverse">
+      <ul className="flex h-full text-4xl md:text-lg flex-col items-center justify-center md:h-auto md:flex-col">
       <li className="my-4 md:hidden">
         <Link onClick={() => closeMobileMenu && closeMobileMenu()} className={`p-4 uppercase cursor-pointer ${pathname == '/' ? "font-semibold" : ""}`} href={'/'}>Home</Link>
       </li>
