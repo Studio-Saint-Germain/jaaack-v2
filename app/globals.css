@@ -67,18 +67,23 @@ a, p {
   grid-column: 1 / span 6;
 }
 
-.grid-item:nth-child(2n) {
+.grid-item:nth-child(2),
+.grid-item:nth-child(8n){
   grid-column: 1 / span 3;
 }
-.grid-item:nth-child(3n) {
+.grid-item:nth-child(3),
+.grid-item:nth-child(9n) {
   grid-column: 4 / span 6;
 }
-.grid-item:nth-child(4n) {
+.grid-item:nth-child(4),
+.grid-item:nth-child(10n) {
   grid-column: 1 / span 2;
 }
-.grid-item:nth-child(5n) {
+.grid-item:nth-child(5),
+.grid-item:nth-child(11n) {
   grid-column: 3 / span 2;
 }
-.grid-item:nth-child(6n) {
+.grid-item:nth-child(6),
+.grid-item:nth-child(12n) {
   grid-column: 5 / span 2;
 }

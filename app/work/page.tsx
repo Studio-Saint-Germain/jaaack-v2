@@ -10,7 +10,7 @@ export default async function Work() {
   const projects = await projectsApi.getHighlightedProjects();
   return (
     <>
-      <main className="flex min-h-screen flex-col items-center justify-between py-16 md:pl-24">
+      <main className="flex min-h-screen flex-col items-center justify-between py-16 md:pl-24 md:py-0">
         <div className="md:grid md:grid-cols-6">
           {projects.map((project, i) => (
             <Link href={`/work/${project.slug}`} key={project.id} className='text-white text-center text-xl cursor-pointer grid-item'>

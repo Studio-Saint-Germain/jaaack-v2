@@ -17,10 +17,12 @@ export default function VideoPlayer({ videoInfos }: VideoPlayerProps) {
     const router = useRouter();
     const [playing, setPlaying] = useState(false);
     const [showDetails, setShowDetails] = useState(false);
+    const [loading, setLoading] = useState(true);
     return (
         <div className={`!w-full !h-screen ${ showDetails ? 'flex' : ''}`}>
-            <div className={`${ showDetails ? 'bg-white pl-6' : ''} md:relative !w-full !h-screen`}>
-                <ReactPlayer volume={0.5} muted={false} loop={true} responsive="true" playing={playing} className="!w-full !h-full" url={videoInfos.url} />
+            {loading && <p className="text-white m-auto fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">Loading...</p>}
+            <div className={`${ showDetails ? 'bg-white pl-6' : ''} md:relative !w-full !h-screen ${loading ? 'opacity-0' : 'opacity-100 delay-150'} transition-opacity duration-300`}>
+                <ReactPlayer onClickPreview={() => setPlaying(!playing)} volume={0.5} muted={false} onReady={() => setLoading(false)} loop={true} responsive="true" playing={playing} className="!w-full !h-full" url={videoInfos.url} />
             </div>
             { videoInfos.description && videoInfos.title && showDetails &&
                 <div className='bg-white h-full overflow-auto p-6 pb-20 text-right max-w-[360px]'>
