@@ -1,4 +1,3 @@
-import Footer from "../components/footer/footer"
 
 export const metadata = {
   title: 'Jack Antoine Charlot - French Director - Work',
