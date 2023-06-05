@@ -18,6 +18,7 @@ export default async function Contact() {
   ), url(${pageData.background_image})`}}>
         <div className="page-title mt-16 md:mt-0 text-white text-center leading-none font-semibold" dangerouslySetInnerHTML={{__html: pageData.title.rendered}}></div>
         <div className="page-description text-white text-center mt-16 text-xl font-light" dangerouslySetInnerHTML={{__html: pageData.content.rendered}}></div>
+        <Footer className='absolute' />
       </main>
     </>
   )
