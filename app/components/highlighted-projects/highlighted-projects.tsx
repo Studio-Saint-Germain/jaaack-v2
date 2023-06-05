@@ -1,6 +1,7 @@
 'use client';
 
 import { Project, projectsApi } from '@/app/api/projects';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useCallback, useEffect, useState } from 'react';
 
@@ -22,11 +23,9 @@ export default function HighlightedProjects() {
 
   return (
     <>
-      <main className="flex min-h-screen flex-col items-center justify-center p-6 md:p-24 !bg-cover !bg-center" style={background ? {backgroundImage: `linear-gradient(
-    rgba(0, 0, 0, 0.3),
-    rgba(0, 0, 0, 0.3)
-  ), url(${background})`} : {}}>
-        <ul className='link-container md:ml-24' onMouseLeave={() => setBackground(initialBackground)}>
+      <main className="flex min-h-screen flex-col items-center justify-center p-6 md:p-24">
+      {background && <Image src={background} fill={true} className="h-full w-full object-cover" alt="Jaack video preview"></Image>}
+        <ul className='link-container md:ml-24 relative' onMouseLeave={() => setBackground(initialBackground)}>
           {highlightedProjects && highlightedProjects.map((project) => (
             <li className='link-item' key={project.id} onMouseEnter={() => setBackground(project.acf.video_gif)} onMouseLeave={() => setBackground('')}>
               <Link href={`/work/${project.slug}`}>

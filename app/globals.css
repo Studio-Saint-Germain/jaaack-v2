@@ -49,7 +49,7 @@ body {
 }
 
 .link-container:hover .link-item {
-  opacity: 0.2;
+  opacity: 0.3;
 }
 
 .link-container .link-item:hover {
