@@ -59,3 +59,26 @@ body {
 a, p {
   @apply font-light;
 }
+.grid-item {
+  @apply h-[49vh] flex items-center justify-center p-12;
+}
+.grid-item:first-child,
+.grid-item:nth-child(7n) {
+  grid-column: 1 / span 6;
+}
+
+.grid-item:nth-child(2n) {
+  grid-column: 1 / span 3;
+}
+.grid-item:nth-child(3n) {
+  grid-column: 4 / span 6;
+}
+.grid-item:nth-child(4n) {
+  grid-column: 1 / span 2;
+}
+.grid-item:nth-child(5n) {
+  grid-column: 3 / span 2;
+}
+.grid-item:nth-child(6n) {
+  grid-column: 5 / span 2;
+}
