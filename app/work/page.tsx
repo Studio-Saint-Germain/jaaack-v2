@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { projectsApi } from "../api/projects";
+import ProjectCard from "./components/project-card/project-card";
 
 export const metadata = {
   title: 'Jack Antoine Charlot - French Director - Work',
@@ -7,15 +7,13 @@ export const metadata = {
 }
 
 export default async function Work() {
-  const projects = await projectsApi.getHighlightedProjects();
+  const projects = await projectsApi.getProjects(['_embed', 'acf_format=standard']);
   return (
     <>
       <main className="flex min-h-screen flex-col items-center justify-between py-16 md:pl-24 md:py-0">
         <div className="md:grid md:grid-cols-6">
           {projects.map((project, i) => (
-            <Link href={`/work/${project.slug}`} key={project.id} className='text-white text-center text-xl cursor-pointer grid-item'>
-              <p dangerouslySetInnerHTML={{ __html: project.title.rendered }} key={project.id}></p>
-            </Link>
+            <ProjectCard project={project} key={project.id} />
           ))}
         </div>
       </main>

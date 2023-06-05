@@ -60,7 +60,7 @@ a, p {
   @apply font-light;
 }
 .grid-item {
-  @apply h-[49vh] flex items-center justify-center p-12;
+  @apply h-[49vh];
 }
 .grid-item:first-child,
 .grid-item:nth-child(7n) {

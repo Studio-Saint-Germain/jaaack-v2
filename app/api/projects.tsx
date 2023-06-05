@@ -9,6 +9,7 @@ export interface Project {
     title: {
         rendered: string;
     },
+    fimg_url: string;
     content: {
         rendered: string;
         protected: boolean;
@@ -23,6 +24,11 @@ export interface Project {
         },
         video_gif: string;
     },
+    _embedded?: {
+        'wp:featuredmedia'?: {
+            source_url: string;
+        }[]
+    }
 }
 
 async function getProjects(extraParams?: string[]): Promise<Project[]> {

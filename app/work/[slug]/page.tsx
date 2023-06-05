@@ -16,9 +16,7 @@ export default async function ProjectSingle({ params }: any) {
   return (
     <>
       <main className="flex min-h-screen flex-col items-center justify-between md:ml-24 relative">
-        <Suspense fallback={<Loading />}>
           <VideoPlayer videoInfos={videoInfos}/>
-        </Suspense>
       </main>
     </>
   )

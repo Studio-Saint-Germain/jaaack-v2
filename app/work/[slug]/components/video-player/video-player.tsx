@@ -21,8 +21,8 @@ export default function VideoPlayer({ videoInfos }: VideoPlayerProps) {
     return (
         <div className={`!w-full !h-screen ${ showDetails ? 'flex' : ''}`}>
             {loading && <p className="text-white m-auto fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">Loading...</p>}
-            <div className={`${ showDetails ? 'bg-white pl-6' : ''} md:relative !w-full !h-screen ${loading ? 'opacity-0' : 'opacity-100 delay-150'} transition-opacity duration-300`}>
-                <ReactPlayer onClickPreview={() => setPlaying(!playing)} volume={0.5} muted={false} onReady={() => setLoading(false)} loop={true} responsive="true" playing={playing} className="!w-full !h-full" url={videoInfos.url} />
+            <div onClick={() => console.log(!playing)} className={`${ showDetails ? 'bg-white pl-6' : ''} md:relative !w-full !h-screen ${loading ? 'opacity-0' : 'opacity-100 delay-150'} transition-opacity duration-300`}>
+                <ReactPlayer volume={0.5} muted={false} onReady={() => setLoading(false)} loop={true} responsive="true" playing={playing} className="!w-full !h-full" url={videoInfos.url} />
             </div>
             { videoInfos.description && videoInfos.title && showDetails &&
                 <div className='bg-white h-full overflow-auto p-6 pb-20 text-right max-w-[360px]'>
