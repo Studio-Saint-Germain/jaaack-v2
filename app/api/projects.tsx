@@ -26,11 +26,12 @@ export interface Project {
 }
 
 async function getProjects(extraParams?: string[]): Promise<Project[]> {
-    let params = '';
+    let params = '?per_page=100';
     if (extraParams) {
-        params = `?${extraParams.join('&')}`;
+        params += `&${extraParams.join('&')}`;
     };
-    const res = await fetch(`${process.env.NEXT_PUBLIC_WORDPRESS_API_ENDPOINT}/projects${params}`, { next: { revalidate: 600 } });
+    console.log(params);
+    const res = await fetch(`${process.env.NEXT_PUBLIC_WORDPRESS_API_ENDPOINT}/projects${params}`, { next: { revalidate: 10 } });
     if (!res.ok) {
       throw new Error('Failed to fetch data');
     }
