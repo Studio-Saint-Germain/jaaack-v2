@@ -12,14 +12,13 @@ export default async function Contact() {
 
   return (
     <>
-      <main className="md:min-h-screen p-16 md:ml-24 page-container !bg-cover" style={{background: `linear-gradient(
+      <main className="min-h-screen p-6 md:p-16 md:ml-24 page-container !bg-cover" style={{background: `linear-gradient(
     rgba(0, 0, 0, 0.3),
     rgba(0, 0, 0, 0.3)
   ), url(${pageData.background_image})`}}>
         <div className="page-title mt-16 md:mt-0 text-white text-center leading-none font-semibold" dangerouslySetInnerHTML={{__html: pageData.title.rendered}}></div>
         <div className="page-description text-white text-center mt-16 text-xl font-light" dangerouslySetInnerHTML={{__html: pageData.content.rendered}}></div>
       </main>
-      <Footer className='md:absolute' />
     </>
   )
 }

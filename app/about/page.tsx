@@ -24,7 +24,6 @@ export default async function About() {
           <Link className="text-3xl text-white underline" href='/contact'>Contact & booking</Link>
         </div>
       </main>
-      <Footer />
     </>
   )
 }

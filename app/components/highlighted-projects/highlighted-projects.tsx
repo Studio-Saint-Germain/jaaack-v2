@@ -22,7 +22,7 @@ export default function HighlightedProjects() {
 
   return (
     <>
-      <main className="flex min-h-screen flex-col items-center justify-center p-24 !bg-cover !bg-center" style={background ? {backgroundImage: `linear-gradient(
+      <main className="flex min-h-screen flex-col items-center justify-center p-6 md:p-24 !bg-cover !bg-center" style={background ? {backgroundImage: `linear-gradient(
     rgba(0, 0, 0, 0.3),
     rgba(0, 0, 0, 0.3)
   ), url(${background})`} : {}}>
