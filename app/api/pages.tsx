@@ -48,7 +48,6 @@ async function getPages(): Promise<Page[]> {
     if (json._embedded['wp:featuredmedia']) {
         page = {...json, background_image: json._embedded['wp:featuredmedia'][0].media_details.sizes.full.source_url };
     }
-    console.log(page);
     return page;
   }
 

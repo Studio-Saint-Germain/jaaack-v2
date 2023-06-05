@@ -30,7 +30,6 @@ async function getProjects(extraParams?: string[]): Promise<Project[]> {
     if (extraParams) {
         params += `&${extraParams.join('&')}`;
     };
-    console.log(params);
     const res = await fetch(`${process.env.NEXT_PUBLIC_WORDPRESS_API_ENDPOINT}/projects${params}`, { next: { revalidate: 10 } });
     if (!res.ok) {
       throw new Error('Failed to fetch data');
