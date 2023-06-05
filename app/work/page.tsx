@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { projectsApi } from "../api/projects";
 
 export const metadata = {
@@ -12,9 +13,9 @@ export default async function Work() {
       <main className="flex min-h-screen flex-col items-center justify-between py-16 md:pl-24">
         <div className="md:grid md:grid-cols-6">
           {projects.map((project, i) => (
-            <div key={project.id} className='text-white text-center text-xl cursor-pointer grid-item'>
+            <Link href={`/work/${project.slug}`} key={project.id} className='text-white text-center text-xl cursor-pointer grid-item'>
               <p dangerouslySetInnerHTML={{ __html: project.title.rendered }} key={project.id}></p>
-            </div>
+            </Link>
           ))}
         </div>
       </main>
