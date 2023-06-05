@@ -24,7 +24,7 @@ export interface Project {
         },
         video_gif: string;
     },
-    _embedded?: {
+    _embedded: {
         'wp:featuredmedia'?: {
             source_url: string;
         }[]
