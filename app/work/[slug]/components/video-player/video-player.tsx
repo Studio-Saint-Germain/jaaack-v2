@@ -27,7 +27,7 @@ export default function VideoPlayer({ videoInfos }: VideoPlayerProps) {
                 <ReactPlayer volume={0.5} muted={false} onReady={() => setLoading(false)} loop={true} responsive="true" playing={playing} className="!w-full !h-full" url={videoInfos.url} />
             </div>
             { (videoInfos.description || videoInfos.title) && 
-                <div id="video-infos" className={`md:bg-white text-white md:text-black md:h-full overflow-auto p-6 md:pb-20 text-left md:text-right md:max-w-[360px] ${showDetails ? 'md:block':'md:hidden' }`}>
+                <div id="video-infos" className={`md:bg-white border-t min-h-screen pt-12 border-t-white text-white md:text-black md:min-h-0 md:h-full overflow-auto p-6 md:pb-20 text-left md:text-right md:max-w-[360px] ${showDetails ? 'md:block':'md:hidden' }`}>
                     <h1 className="text-2xl font-bold mb-6" dangerouslySetInnerHTML={{__html: videoInfos.title}}></h1>
                     <div className="text-sm description" dangerouslySetInnerHTML={{__html: videoInfos.description}}></div>
                 </div>
