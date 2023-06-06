@@ -1,8 +1,7 @@
 'use client';
-import Link from 'next/link';
-import { usePathname, useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
-import ReactPlayer from 'react-player'
+import ReactPlayer from 'react-player';
 
 interface VideoPlayerProps {
     videoInfos: VideoInfos;
@@ -16,10 +15,10 @@ export interface VideoInfos {
 
 export default function VideoPlayer({ videoInfos }: VideoPlayerProps) {
     const router = useRouter();
-    const navigation = usePathname();
     const [playing, setPlaying] = useState(false);
     const [showDetails, setShowDetails] = useState(false);
     const [loading, setLoading] = useState(true);
+    
     return (
         <div className={`!w-full !h-screen scroll-smooth ${ showDetails ? 'md:flex' : ''}`}>
             {loading && <p className="text-white m-auto fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">Loading...</p>}
