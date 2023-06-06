@@ -2,6 +2,7 @@
 import { AppRoute, AppRoutes } from '@/app/router/routes';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import path from 'path';
 import React from 'react';
 
 interface NavigationMenuProps {
@@ -15,6 +16,7 @@ interface NavigationMenuProps {
 export default function NavigationMenu({ closeMobileMenu, isVisible}: NavigationMenuProps) {
   const pathname = usePathname();
   const isHomePage = pathname === "/";
+
   return (
     <nav className={`bg-white md:bg-transparent fixed md:relative w-full md:w-auto h-full md:h-auto top-0 md:top-unset z-10 md:z-auto transition-all duration-200 ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'} md:translate-x-0 md:opacity-100`}>
       <ul className="flex h-full text-4xl md:text-lg flex-col items-center justify-center md:h-auto md:flex-col">
@@ -26,7 +28,7 @@ export default function NavigationMenu({ closeMobileMenu, isVisible}: Navigation
       </li>
         {AppRoutes.map( (route: AppRoute) => (
           <li key={route.label} className="my-4 md:my-0 md:flex md:items-center md:justify-center">
-            <Link onClick={() => closeMobileMenu && closeMobileMenu()} className={`md:text-b-to-t p-4 uppercase ${isHomePage ? 'md:text-white' : ''} cursor-pointer ${pathname == route.path ? "font-semibold" : ""}`} href={route.path}>{route.label}</Link>
+            <Link onClick={() => closeMobileMenu && closeMobileMenu()} className={`md:text-b-to-t p-4 uppercase ${isHomePage ? 'md:text-white' : ''} cursor-pointer ${pathname.split('/').includes(route.path.slice(1)) ? "font-semibold" : ""}`} href={route.path}>{route.label}</Link>
           </li>
         ))}
       </ul>
