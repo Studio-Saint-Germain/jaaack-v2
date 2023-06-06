@@ -50,7 +50,7 @@ export default function VideoPlayer({ videoInfos }: VideoPlayerProps) {
                     <div className={`flex justify-between w-full py-6 ${ showDetails ? 'md:bg-white' : ''}`}>
                         <span className="text-2xl cursor-pointer font-light pointer-events-auto" onClick={() => setPlaying(!playing)}>{playing ? 'Pause' : 'Play'} video</span>
                         <span className="text-2xl cursor-pointer font-light pointer-events-auto hidden md:block" onClick={() => setShowDetails(!showDetails)}>Infos</span>
-                        <span onClick={(e) => handleScroll(e, '#video-infos')} className="md:hidden font-light text-2xl pointer-events-auto" scroll={false}>Infos</span>
+                        <span onClick={(e) => handleScroll(e, '#video-infos')} className="md:hidden font-light text-2xl pointer-events-auto">Infos</span>
                     </div>
             </div>
         </div>
