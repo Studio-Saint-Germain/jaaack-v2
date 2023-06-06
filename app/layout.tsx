@@ -1,9 +1,7 @@
-import { Inter } from 'next/font/google'
-import Navigation from './components/header/header'
-import './globals.css';
 import localFont from 'next/font/local';
+import Navigation from './components/header/header';
+import './globals.css';
 
-const inter = Inter({ subsets: ['latin'] })
 const satoshi = localFont({
   src: './assets/fonts/satoshi/Satoshi-Variable.woff2',
 });
