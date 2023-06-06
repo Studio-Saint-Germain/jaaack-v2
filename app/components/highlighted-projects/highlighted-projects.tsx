@@ -22,7 +22,7 @@ export default function HighlightedProjects() {
 
   return (
     <>
-      <main className="flex min-h-screen flex-col items-center justify-center p-6 md:p-24">
+      <main className="flex min-h-screen flex-col items-center justify-center pt-24 p-6 md:p-24">
       {background && <Image src={background} fill={true} className="object-cover object-center" alt="Jaack video preview"></Image>}
         <ul className='link-container md:ml-24 relative' onMouseLeave={() => setBackground('')}>
           {highlightedProjects && highlightedProjects.map((project) => (

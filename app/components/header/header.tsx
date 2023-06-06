@@ -15,7 +15,7 @@ export default function Header({className}: HeaderProps) {
   const isHomePage = pathname === "/";
   const [displayMobileMenu, setDisplayMobileMenu] = useState(false);
   return (
-    <header className={`${className ? className : ''} z-10 flex items-center w-[calc(100%_-_32px)] md:border-r md:border-solid ${isHomePage ? 'border-white' : 'md:border-black md:bg-white'} md:w-24 md:h-screen fixed md:top-0 py-4 md:flex-col md:items-stretch justify-between`}>
+    <header className={`${className ? className : ''} z-10 flex items-center w-full pr-6 md:pr-0 md:border-r md:border-solid ${isHomePage ? 'border-white' : 'md:border-black md:bg-white'} md:w-24 md:h-screen fixed md:top-0 py-4 md:flex-col md:items-stretch justify-between`}>
       <NavigationMenu closeMobileMenu={() => setDisplayMobileMenu(!displayMobileMenu)} isVisible={displayMobileMenu} isHomePage={isHomePage} />
       <Link href="/">
         <Image

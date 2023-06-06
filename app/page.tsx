@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <>
     <HighlightedProjects />
-    <Footer className='absolute' />
+    <Footer className='md:absolute' />
     </>
   )
 }
