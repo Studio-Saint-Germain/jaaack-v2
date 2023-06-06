@@ -24,7 +24,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             href={`/work/${project.slug}`} 
             onMouseEnter={() => setBackground(project.acf.video_gif)} 
             onMouseLeave={() => setBackground(initialBkg)} 
-            className='text-white text-center text-xl cursor-pointer grid-item relative h-49vh overflow-hidden'
+            className='text-white text-center text-xl cursor-pointer grid-item relative h-49vh block overflow-hidden'
         >
             {background && <Image src={background} fill={true} className="object-cover object-center" alt="Jaack video preview"></Image>}
             <div className="bg-black bg-opacity-40 !h-full w-full relative flex items-center justify-center p-12">

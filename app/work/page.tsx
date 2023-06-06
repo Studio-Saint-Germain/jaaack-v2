@@ -10,7 +10,7 @@ export default async function Work() {
   const projects = await projectsApi.getProjects(['_embed', 'acf_format=standard']);
   return (
     <>
-      <main className="flex min-h-screen flex-col items-center justify-between py-16 md:pl-24 md:py-0">
+      <main className="flex min-h-screen flex-col items-center justify-between md:pl-24 md:py-0">
         <div className="md:grid md:grid-cols-6">
           {projects.map((project, i) => (
             <ProjectCard project={project} key={project.id} />

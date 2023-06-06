@@ -18,6 +18,7 @@ body {
     rgb(var(--background-start-rgb)); */
   background: rgb(var(--foreground-rgb));;
   font-weight: light;
+  scroll-behavior: smooth;
 }
 
 @layer utilities {
