@@ -37,7 +37,6 @@ export default function VideoPlayer({ videoInfos }: VideoPlayerProps) {
                     <div className={`flex justify-between w-full py-6 ${ showDetails ? 'md:bg-white' : ''}`}>
                         <a className="text-2xl cursor-pointer pointer-events-auto" onClick={() => setPlaying(!playing)}>{playing ? 'Pause' : 'Play'} video</a>
                         <a className="text-2xl cursor-pointer pointer-events-auto hidden md:block" onClick={() => setShowDetails(!showDetails)}>Infos</a>
-                        <Link className="text-2xl cursor-pointer pointer-events-auto md:hidden" href={navigation+'#video-infos'}>Infos</Link>
                     </div>
             </div>
         </div>
