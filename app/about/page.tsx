@@ -14,7 +14,7 @@ export default async function About() {
 
   return (
     <>
-          <main className="md:min-h-screen p-16 md:ml-24 page-container !bg-cover" style={pageData.background_image ? {background: `linear-gradient(
+          <main className="md:min-h-screen p-16 md:ml-16 page-container !bg-cover" style={pageData.background_image ? {background: `linear-gradient(
     rgba(0, 0, 0, 0.3),
     rgba(0, 0, 0, 0.3)
   ),url(${pageData.background_image} no-repeat`} : {}}>
