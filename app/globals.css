@@ -27,7 +27,7 @@ body {
     transform: rotate(-180deg);
   }
   .desktop-vertical-logo {
-    transform: translate3d(-31%,-100%,0) rotate(-90deg);
+    transform: translate3d(-32%,-100%,0) rotate(-90deg);
   }
 }
 
