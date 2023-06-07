@@ -1,5 +1,6 @@
 import { pagesApi } from "../api/pages";
 import Footer from "../components/footer/footer"
+import VideoFullBackground from "../components/video-full-background/video-full-background";
 
 export const metadata = {
   title: 'Jack Antoine Charlot - French Director - Contact',
@@ -9,15 +10,18 @@ const CONTACT_PAGE_ID = 18;
 
 export default async function Contact() {
   const pageData = await pagesApi.getPageById(CONTACT_PAGE_ID);
-  console.log(pageData);
+  const backgroundVideo = pageData.acf.background_video;
 
   return (
     <>
-      <main className="min-h-screen p-6 md:p-16 md:ml-16 page-container !bg-cover">
-        <div className="page-title mt-16 md:mt-0 text-white text-center leading-none font-semibold" dangerouslySetInnerHTML={{__html: pageData.title.rendered}}></div>
-        <div className="page-description text-white text-center mt-16 text-xl font-light" dangerouslySetInnerHTML={{__html: pageData.content.rendered}}></div>
-        <Footer className='absolute' />
+      <main className="min-h-screen relative page-container !bg-cover">
+        {backgroundVideo && <VideoFullBackground url={backgroundVideo} />}
+        <div className="relative p-6 md:p-16 md:ml-16">
+          <h1 className="page-title mt-16 md:mt-0 text-white text-center leading-none font-semibold" dangerouslySetInnerHTML={{__html: pageData.title.rendered}}></h1>
+          <div className="page-description text-white text-center mt-16 text-xl font-light" dangerouslySetInnerHTML={{__html: pageData.content.rendered}}></div>
+        </div>
       </main>
+      <Footer className="absolute"/>
     </>
   )
 }

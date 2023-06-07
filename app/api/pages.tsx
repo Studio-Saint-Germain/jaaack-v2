@@ -41,7 +41,7 @@ async function getPages(): Promise<Page[]> {
   }
 
   async function getPageById(id: number): Promise<Page> {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_WORDPRESS_API_ENDPOINT}/pages/${id}?acf_format=standard`);
+    const res = await fetch(`${process.env.NEXT_PUBLIC_WORDPRESS_API_ENDPOINT}/pages/${id}?acf_format=standard`, { next: { revalidate: 10 } });
     if (!res.ok) {
       throw new Error('Failed to fetch data');
     }
