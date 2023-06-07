@@ -32,7 +32,7 @@ export interface Page {
 }
 
 async function getPages(): Promise<Page[]> {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_WORDPRESS_API_ENDPOINT}/pages`);
+    const res = await fetch(`${process.env.NEXT_PUBLIC_WORDPRESS_API_ENDPOINT}/pages/?acf_format=standard`, { next: { revalidate: 10 } });
     if (!res.ok) {
       throw new Error('Failed to fetch data');
     }
@@ -40,18 +40,18 @@ async function getPages(): Promise<Page[]> {
     return json;
   }
 
-  async function getPageById(id: number): Promise<Page> {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_WORDPRESS_API_ENDPOINT}/pages/${id}?acf_format=standard`, { next: { revalidate: 10 } });
-    if (!res.ok) {
+  export async function getPageById(id: number): Promise<Page> {
+    const pages = await getPages();
+    const page = pages.find((page: Page) => page.id === id);
+    /* const res = await fetch(`${process.env.NEXT_PUBLIC_WORDPRESS_API_ENDPOINT}/pages/${id}?acf_format=standard`, { next: { revalidate: 10 } }); */
+    if (!page) {
       throw new Error('Failed to fetch data');
     }
-    const json = await res.json() as Page;
-    let page = json;
     return page;
+    
   }
 
-
-export const pagesApi = {
+  export const pagesApi = {
     getPages,
     getPageById,
 }
