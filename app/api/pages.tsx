@@ -10,7 +10,9 @@ export interface Page {
     },
     featured_media: number;
     background_image?: string;
-    acf: [];
+    acf: {
+        background_video: string;
+    },
     _embedded: {
         'wp:featuredmedia': [
             {
@@ -39,15 +41,12 @@ async function getPages(): Promise<Page[]> {
   }
 
   async function getPageById(id: number): Promise<Page> {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_WORDPRESS_API_ENDPOINT}/pages/${id}?_embed`);
+    const res = await fetch(`${process.env.NEXT_PUBLIC_WORDPRESS_API_ENDPOINT}/pages/${id}?acf_format=standard`);
     if (!res.ok) {
       throw new Error('Failed to fetch data');
     }
     const json = await res.json() as Page;
     let page = json;
-    if (json._embedded['wp:featuredmedia']) {
-        page = {...json, background_image: json._embedded['wp:featuredmedia'][0].media_details.sizes.full.source_url };
-    }
     return page;
   }
 

@@ -1,5 +1,6 @@
 'use client';
 import { Project } from '@/app/api/projects';
+import VideoFullBackground from '@/app/components/video-full-background/video-full-background';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -17,16 +18,17 @@ export interface VideoInfos {
 
 export default function ProjectCard({ project }: ProjectCardProps) {
     const initialBkg = !!project._embedded['wp:featuredmedia'] ? project._embedded['wp:featuredmedia'][0].source_url : '';
-    const [background, setBackground] = useState<string>(initialBkg);
+    const [backgroundVideo, setBackgroundVideo] = useState<string>();
     const router = useRouter();
     return (
         <Link 
             href={`/work/${project.slug}`} 
-            onMouseEnter={() => setBackground(project.acf.video_gif)} 
-            onMouseLeave={() => setBackground(initialBkg)} 
-            className='text-white text-center text-xl cursor-pointer grid-item relative h-49vh block overflow-hidden'
+            onMouseEnter={() => setBackgroundVideo(project.acf.video_gif)} 
+            onMouseLeave={() => setBackgroundVideo('')} 
+            style={{backgroundImage: `url(${initialBkg})`}}
+            className='text-white text-center bg-cover bg-center text-xl cursor-pointer grid-item relative h-49vh block overflow-hidden'
         >
-            {background && <Image src={background} fill={true} className="object-cover object-center" alt="Jaack video preview"></Image>}
+            {backgroundVideo && <VideoFullBackground url={backgroundVideo} />}
             <div className="bg-black bg-opacity-40 !h-full w-full relative flex items-center justify-center p-12">
                 <p dangerouslySetInnerHTML={{ __html: project.title.rendered }} key={project.id}></p>
             </div>

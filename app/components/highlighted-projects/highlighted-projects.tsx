@@ -1,10 +1,9 @@
 'use client';
 
 import { Project, projectsApi } from '@/app/api/projects';
-import Image from 'next/image';
 import Link from 'next/link';
 import { useCallback, useEffect, useState } from 'react';
-import ReactPlayer from 'react-player';
+import VideoFullBackground from '../video-full-background/video-full-background';
 
 
 export default function HighlightedProjects() {
@@ -24,12 +23,10 @@ export default function HighlightedProjects() {
   return (
     <>
       <main className="flex min-h-screen flex-col items-center justify-center pt-24 p-6 md:p-16">
-      {videoBackground && 
-      <ReactPlayer muted className="absolute !object-center !object-cover z-0 !w-auto !min-w-full !min-h-full !max-h-none !max-w-none video-preview-player" loop responsive playsinline playing url={videoBackground} />
-      }
+        {videoBackground && <VideoFullBackground url={videoBackground} />}
         <ul className='link-container md:ml-16 relative' onMouseLeave={() => setVideoBackground('')}>
           {highlightedProjects && highlightedProjects.map((project) => (
-            <li className='link-item' key={project.id} onMouseEnter={() => setVideoBackground(project.acf.video_gif)} onMouseLeave={() => setVideoBackground('')}>
+            <li className='link-item' key={project.id} onMouseEnter={() => setVideoBackground(project.acf.video_gif)}>
               <Link href={`/work/${project.slug}`}>
                 <p dangerouslySetInnerHTML={{ __html: project.title.rendered }} key={project.id} className='text-white text-center p-2 md:p-0 text-xl cursor-pointer'></p>
               </Link>
