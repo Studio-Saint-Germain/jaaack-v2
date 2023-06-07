@@ -43,7 +43,7 @@ body {
 }
 
 .page-description p {
-  @apply mb-4 leading-loose;
+  @apply mb-6;
 }
 .page-description strong {
   @apply font-semibold;
