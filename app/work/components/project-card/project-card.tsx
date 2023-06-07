@@ -29,7 +29,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             className='text-white text-center bg-cover bg-center text-xl cursor-pointer grid-item relative h-49vh block overflow-hidden'
         >
             {backgroundVideo && <VideoFullBackground url={backgroundVideo} />}
-            <div className="bg-black bg-opacity-40 !h-full w-full relative flex items-center justify-center p-12">
+            <div className="bg-black bg-opacity-10 !h-full w-full relative flex items-center justify-center p-12">
                 <p dangerouslySetInnerHTML={{ __html: project.title.rendered }} key={project.id}></p>
             </div>
         </Link>   
