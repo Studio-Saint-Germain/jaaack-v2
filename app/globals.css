@@ -88,3 +88,7 @@ a, p {
 .grid-item:nth-child(12n) {
   grid-column: 5 / span 2;
 }
+
+.video-preview-player video {
+  object-fit: cover;
+}
