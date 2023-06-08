@@ -36,15 +36,20 @@ body {
 }
 
 .page-title {
-  font-size: clamp(4rem, 12vw, 10rem); 
+  /* font-size: clamp(4rem, 12vw, 10rem);  */
+  @apply text-5xl mb-8 leading-normal uppercase;
+
 }
 .page-description h2 {
   @apply text-3xl mb-8 leading-normal;
 }
-
-.page-description p {
-  @apply mb-6;
+.direct-contact {
+  @apply mt-20;
 }
+.page-description p {
+  @apply mb-10 text-lg;
+}
+
 .page-description strong {
   @apply font-semibold;
 }
