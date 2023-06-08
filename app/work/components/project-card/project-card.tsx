@@ -1,7 +1,6 @@
 'use client';
 import { Project } from '@/app/api/projects';
 import VideoFullBackground from '@/app/components/video-full-background/video-full-background';
-import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
