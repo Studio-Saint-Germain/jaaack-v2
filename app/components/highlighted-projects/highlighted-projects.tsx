@@ -36,7 +36,7 @@ export default function HighlightedProjects() {
 
   return (
     <>
-      <main className="flex min-h-screen flex-col items-center justify-center pt-24 p-6 md:p-16">
+      <main className="flex min-h-screen w-full h-full flex-col items-center justify-center pt-24 p-6 md:p-16">
         {videoBackground && <VideoFullBackground url={videoBackground} />}
         <ul className='link-container md:ml-16 relative' onMouseLeave={() => setVideoBackground(defaultVideo)}>
           {highlightedProjects && highlightedProjects.map((project) => (
