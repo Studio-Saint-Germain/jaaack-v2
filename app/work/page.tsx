@@ -11,7 +11,7 @@ export default async function Work() {
   return (
     <>
       <main className="flex min-h-screen flex-col items-center justify-between md:pl-16 md:py-0">
-        <div className="md:grid md:grid-cols-6 w-full">
+        <div className="md:grid md:grid-cols-6 w-full gap-0">
           {projects.map((project, i) => (
             <ProjectCard project={project} key={project.id} />
           ))}

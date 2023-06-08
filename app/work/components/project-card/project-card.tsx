@@ -26,7 +26,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             onMouseEnter={() => setBackgroundVideo(project.acf.video_gif)} 
             onMouseLeave={() => setBackgroundVideo('')} 
             style={{backgroundImage: `url(${initialBkg})`}}
-            className='text-white text-center bg-cover bg-center text-xl cursor-pointer grid-item relative h-49vh block overflow-hidden'
+            className='text-white text-center bg-cover block bg-center text-xl cursor-pointer grid-item relative h-49vh overflow-hidden'
         >
             {backgroundVideo && <VideoFullBackground url={backgroundVideo} />}
             <div className="bg-black bg-opacity-10 !h-full w-full relative flex items-center justify-center p-12">
