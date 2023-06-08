@@ -4,17 +4,31 @@ import { Project, projectsApi } from '@/app/api/projects';
 import Link from 'next/link';
 import { useCallback, useEffect, useState } from 'react';
 import VideoFullBackground from '../video-full-background/video-full-background';
+import { pagesApi } from '@/app/api/pages';
 
 
 export default function HighlightedProjects() {
 
   const [highlightedProjects, setHighlightedProjects] = useState<Project[]>();
   const [videoBackground, setVideoBackground] = useState<string>();
+  const [defaultVideo, setDefaultVideo] = useState<string>();
 
   const getHighlightedProjects = useCallback( async () => {
     const projects = await projectsApi.getHighlightedProjects();
     setHighlightedProjects(projects);
   }, [setHighlightedProjects]);
+
+  const getDefaultVideo = useCallback( async () => {
+    const pageData = await pagesApi.getPageById(138);
+    const videos = Object.values(pageData.acf);
+    const randomVideo = videos[Math.floor(Math.random() * videos.length)];
+    setDefaultVideo(randomVideo);
+    setVideoBackground(randomVideo);
+  }, []);
+
+  useEffect(() => {
+    getDefaultVideo();
+  }, [getDefaultVideo]);
 
   useEffect(() => {
     getHighlightedProjects();
@@ -24,7 +38,7 @@ export default function HighlightedProjects() {
     <>
       <main className="flex min-h-screen flex-col items-center justify-center pt-24 p-6 md:p-16">
         {videoBackground && <VideoFullBackground url={videoBackground} />}
-        <ul className='link-container md:ml-16 relative' onMouseLeave={() => setVideoBackground('')}>
+        <ul className='link-container md:ml-16 relative' onMouseLeave={() => setVideoBackground(defaultVideo)}>
           {highlightedProjects && highlightedProjects.map((project) => (
             <li className='link-item' key={project.id} onMouseEnter={() => setVideoBackground(project.acf.video_gif)}>
               <Link href={`/work/${project.slug}`}>
