@@ -19,13 +19,18 @@ export default async function About() {
       <main className="min-h-screen relative page-container !bg-cover">
         {backgroundVideo && <VideoFullBackground url={backgroundVideo} />}
         <div className="relative p-6 md:p-16 md:ml-16">
-        <h1 className="page-title mt-16 md:mt-0 md:max-w-[80%] md:ml-[20%] text-white text-right leading-none font-semibold" dangerouslySetInnerHTML={{__html: pageData.title.rendered}}></h1>
-        <div className="text-white text-right mt-16 text-xl font-light" dangerouslySetInnerHTML={{__html: pageData.content.rendered}}></div>
-        <div className="text-right mt-16">
-          <Link className="text-3xl text-white underline" href='/contact'>Contact & booking</Link>
+          <h1 className="text-white font-bold text-5xl w-fit mx-auto">
+            <div className="text-[1em]">JACK</div>
+            <div className="text-[.6em]">ANTOINE</div>
+            <div className="text-[.55em]">CHARLOT</div>
+          </h1>
+        <div className="text-white page-description mt-16 text-xl text-center font-light" dangerouslySetInnerHTML={{__html: pageData.content.rendered}}></div>
+        <div className="text-center mt-16">
+          <Link className="text-xl text-white underline" href='/contact'>Contact & booking</Link>
         </div>
         </div>
       </main>
+      <Footer className="md:absolute"/>
     </>
   )
 }

@@ -43,7 +43,7 @@ export default async function Contact() {
           </div>
         </div>
       </main>
-      <Footer className="absolute"/>
+      <Footer className="md:absolute"/>
     </>
   )
 }
