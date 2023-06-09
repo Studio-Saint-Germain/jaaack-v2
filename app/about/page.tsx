@@ -16,9 +16,9 @@ export default async function About() {
 
   return (
     <>
-      <main className="min-h-screen relative page-container !bg-cover">
+      <main className="min-h-screen relative page-container">
       {backgroundVideo && <VideoFullBackground url={backgroundVideo} />}
-        <div className="relative p-6 md:p-16 md:ml-16">
+        <div className="relative p-6 pt-20 md:p-16 md:ml-16">
           <h1 className="text-white font-bold text-5xl w-fit mx-auto">
             <div className="text-[1em]">JACK</div>
             <div className="text-[.6em]">ANTOINE</div>

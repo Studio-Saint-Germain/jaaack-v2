@@ -97,5 +97,5 @@ a, p {
 }
 
 .--flex-img {
-  @apply flex items-center justify-center;
+  @apply flex items-center justify-center flex-col md:flex-row;
 }

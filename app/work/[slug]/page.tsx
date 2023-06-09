@@ -1,7 +1,5 @@
 import { projectsApi } from "@/app/api/projects";
-import React, { Suspense } from 'react';
 import VideoPlayer, { VideoInfos } from "./components/video-player/video-player";
-import Loading from "./loading";
 
 
 
