@@ -3,7 +3,7 @@ import ProjectCard from "./components/project-card/project-card";
 
 export const metadata = {
   title: 'Jack Antoine Charlot - French Director - Work',
-  description: 'Jack Antoine Charlot is a french director.',
+  description: 'Explore the award-winning work of Jack Antoine Charlot, a visionary director and animation expert. Discover captivating storytelling and breathtaking artistry.',
 }
 
 export default async function Work() {

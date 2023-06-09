@@ -4,7 +4,7 @@ import VideoFullBackground from "../components/video-full-background/video-full-
 
 export const metadata = {
   title: 'Jack Antoine Charlot - French Director - Distinctions',
-  description: 'Jack Antoine Charlot is a french director.',
+  description: 'Explore Jack Antoine Charlot\'s awards. Witness the recognition received by this talented director and animation expert. Celebrate his remarkable achievements.',
 }
 
 const AWARDS_PAGE_ID = 293;

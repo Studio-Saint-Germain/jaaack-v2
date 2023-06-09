@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export const metadata = {
   title: 'Jack Antoine Charlot - French Director - Contact',
-  description: 'Jack Antoine Charlot is a french director.',
+  description: 'Wanna work with Jack Antoine Charlot ? feel free to contact him.',
 }
 const CONTACT_PAGE_ID = 18;
 
