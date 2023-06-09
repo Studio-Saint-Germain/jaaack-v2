@@ -17,7 +17,7 @@ export default async function Contact() {
   return (
     <>
       <main className="min-h-screen relative page-container !bg-cover">
-        {backgroundVideo && <VideoFullBackground url={backgroundVideo} />}
+        {backgroundVideo && <VideoFullBackground fixed url={backgroundVideo} />}
         <div className="relative p-6 md:p-10 md:ml-16">
           <h1 className="page-title mt-16 md:mt-0 text-white text-center leading-none font-semibold" dangerouslySetInnerHTML={{__html: pageData.title.rendered}}></h1>
           <div className="page-description text-white text-center mt-10 text-xl font-light" dangerouslySetInnerHTML={{__html: pageData.content.rendered}}></div>
