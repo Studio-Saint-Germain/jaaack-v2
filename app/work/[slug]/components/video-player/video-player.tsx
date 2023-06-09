@@ -33,7 +33,7 @@ export default function VideoPlayer({ videoInfos }: VideoPlayerProps) {
     return (
         <div className={`!w-full !h-screen scroll-smooth ${ showDetails ? 'md:flex' : ''}`}>
             {loading && <p className="text-white m-auto fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">Loading...</p>}
-            <div onClick={() => console.log(!playing)} className={`${ showDetails ? 'md:bg-white md:pl-6' : ''} md:relative !w-full !h-screen ${loading ? 'opacity-0' : 'opacity-100 delay-150'} transition-opacity duration-300`}>
+            <div onClick={() => console.log('lololol')} className={`${ showDetails ? 'md:bg-white md:pl-6' : ''} md:relative !w-full !h-screen ${loading ? 'opacity-0' : 'opacity-100 delay-150'} transition-opacity duration-300`}>
                 <ReactPlayer onClick={() => console.log('click')} volume={0.5} muted={false} onReady={() => setLoading(false)} loop={true} responsive="true" playing={playing} className="!w-full !h-full" url={videoInfos.url} />
             </div>
             { (videoInfos.description || videoInfos.title) && 
