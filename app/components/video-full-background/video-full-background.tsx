@@ -8,6 +8,6 @@ interface VideoFullBackgroundProps {
 
 export default function VideoFullBackground({url}: VideoFullBackgroundProps) {
   return (
-    <ReactPlayer muted className="absolute z-0 !w-auto !min-w-full !min-h-full !max-h-none !max-w-none video-preview-player" loop playsinline playing url={url} />
+    <ReactPlayer muted className="fixed z-0 top-0 !w-auto !min-w-full !min-h-full !max-h-none !max-w-none video-preview-player" loop playsinline playing url={url} />
   )
 }

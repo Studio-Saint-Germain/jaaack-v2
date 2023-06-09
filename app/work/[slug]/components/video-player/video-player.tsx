@@ -42,7 +42,7 @@ export default function VideoPlayer({ videoInfos }: VideoPlayerProps) {
                     <div className="text-sm description" dangerouslySetInnerHTML={{__html: videoInfos.description}}></div>
                 </div>
             }
-            <div className={`!w-full pointer-events-none !h-full absolute top-0 flex flex-col items-start justify-between pt-24 md:pt-6 p-6 pb-0 ${showDetails ? 'md:text-black' : 'text-white'}`}>
+            <div onClick={() => console.log('container')} className={`!w-full !h-full absolute top-0 flex flex-col items-start justify-between pt-24 md:pt-6 p-6 pb-0 ${showDetails ? 'md:text-black' : 'text-white'}`}>
                     <span className="text-2xl cursor-pointer pointer-events-auto font-light" onClick={() => router.back()}>
                       <Image
                         src="/arrow-back.svg"
