@@ -24,7 +24,7 @@ export default function NavigationMenu({ closeMobileMenu, isVisible}: Navigation
         <Link onClick={() => closeMobileMenu && closeMobileMenu()} className={`p-4 uppercase cursor-pointer ${pathname == '/' ? "font-semibold" : ""}`} href={'/'}>Home</Link>
       </li>
       <li className="md:hidden">
-      <a onClick={() => closeMobileMenu && closeMobileMenu()} className={`p-4 text-lg uppercase cursor-pointer absolute top-4 right-4`}>Close</a>
+      <span onClick={() => closeMobileMenu && closeMobileMenu()} className={`p-4 text-lg uppercase cursor-pointer absolute top-4 right-4`}>Close</span>
       </li>
         {AppRoutes.map( (route: AppRoute) => (
           <li key={route.label} className="my-4 md:my-0 md:flex md:items-center md:justify-center">
