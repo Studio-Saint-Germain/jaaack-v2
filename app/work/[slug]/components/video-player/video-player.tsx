@@ -44,18 +44,18 @@ export default function VideoPlayer({ videoInfos }: VideoPlayerProps) {
                     <div className="text-sm description" dangerouslySetInnerHTML={{__html: videoInfos.description}}></div>
                 </div>
             }
-            <div className='w-full z-10 absolute top-0 pt-24 pl-6 md:pt-6 cursor-pointer'>
+            <div className='w-full z-10 absolute top-0 pt-24 pl-6 md:pt-6'>
                 <Image
                     src="/arrow-back.svg"
                     alt="back to Jaaack work"
                     onClick={() => router.back()}
                     width={80}
-                    className={`${showDetails ? '' : 'invert'}`}
+                    className={`${showDetails ? '' : 'invert'} cursor-pointer`}
                     height={20}
                     priority
                 />
             </div>
-            <div className='w-full z-10 absolute bottom-0 pb-6 px-6 md:pb-0 cursor-pointer'>
+            <div className='w-full z-10 absolute bottom-0 pb-6 px-6 md:pb-0'>
                 <div className={`flex justify-between w-full py-6 text-white ${ showDetails ? 'md:bg-white md:text-black' : ''}`}>
                     <span className="text-2xl cursor-pointer font-light pointer-events-auto" onClick={() => setPlaying(!playing)}>{playing ? 'Pause' : 'Play'} video</span>
                     <span className="text-2xl cursor-pointer font-light pointer-events-auto hidden md:block" onClick={() => setShowDetails(!showDetails)}>Infos</span>
