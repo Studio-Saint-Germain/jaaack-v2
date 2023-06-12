@@ -36,7 +36,7 @@ export default function VideoPlayer({ videoInfos }: VideoPlayerProps) {
             {loading && <p className="text-white m-auto fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">Loading...</p>}
             <div className={`transition-opacity duration-300 cursor-pointer md:relative !w-full !h-screen ${ showDetails ? 'md:bg-white md:pl-6' : ''} ${loading ? 'opacity-0' : 'opacity-100 delay-150'}`}>
             <div className={`w-full aspect-video absolute ${showDetails ? 'md:left-6 md:w-[calc(100%_-_1.5rem)]' : ''} left-0 top-1/2 z-10 -translate-y-1/2 md:cursor-pointer`} onClick={() => setPlaying(!playing)}></div>
-                <ReactPlayer volume={0.5} muted={false} onReady={() => setLoading(false)} loop responsive playing={playing} className="!w-full !h-full cursor-pointer" url={videoInfos.url} />
+                <ReactPlayer playsinline autoplay volume={0.5} muted={false} onReady={() => setLoading(false)} loop responsive playing={playing} className="!w-full !h-full cursor-pointer" url={videoInfos.url} />
             </div>
             { (videoInfos.description || videoInfos.title) && 
                 <div id="video-infos" className={`md:bg-white border-t min-h-screen pt-24 border-t-white text-white md:text-black md:min-h-0 md:h-full overflow-auto p-6 md:pb-20 text-left md:text-right md:max-w-[360px] ${showDetails ? 'md:block':'md:hidden' }`}>
