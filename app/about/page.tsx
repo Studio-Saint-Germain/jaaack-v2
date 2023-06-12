@@ -4,7 +4,7 @@ import Footer from "../components/footer/footer"
 import VideoFullBackground from "../components/video-full-background/video-full-background";
 
 export const metadata = {
-  title: 'Jack Antoine Charlot - French Director - About Jack Antoine',
+  title: 'Jack Antoine Charlot - Director & Animation Director - About',
   description: 'Discover Jack Antoine Charlot, an award-winning director and animation expert. Uncover his creative brilliance and captivating storytelling.',
 }
 

@@ -2,7 +2,7 @@ import { projectsApi } from "../api/projects";
 import ProjectCard from "./components/project-card/project-card";
 
 export const metadata = {
-  title: 'Jack Antoine Charlot - French Director - Work',
+  title: 'Jack Antoine Charlot - Director & Animation Director - Work',
   description: 'Explore the award-winning work of Jack Antoine Charlot, a visionary director and animation expert. Discover captivating storytelling and breathtaking artistry.',
 }
 
