@@ -42,6 +42,7 @@ export default function HighlightedProjects() {
           {highlightedProjects && highlightedProjects.map((project) => (
             <li className='link-item' key={project.id} onMouseEnter={() => setVideoBackground(project.acf.video_gif)}>
               <Link href={`/work/${project.slug}`}>
+                AAA
                 <p dangerouslySetInnerHTML={{ __html: project.title.rendered }} key={project.id} className='text-white text-center p-2 md:p-0 text-xl cursor-pointer'></p>
               </Link>
             </li>
