@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://jaaack-v2.vercel.app/
+Host: https://jaaack.fr/
 
 # Sitemaps
-Sitemap: https://jaaack-v2.vercel.app/sitemap.xml
+Sitemap: https://jaaack.fr/sitemap.xml
