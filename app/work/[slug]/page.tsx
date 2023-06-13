@@ -2,7 +2,6 @@ import { projectsApi } from "@/app/api/projects";
 import VideoPlayer, { VideoInfos } from "./components/video-player/video-player";
 import { Metadata } from "next";
 
-
 export default async function ProjectSingle({ params }: any) {
   const project = await projectsApi.getProjectBySlug(params.slug);
   const videoInfos: VideoInfos = {
@@ -28,6 +27,6 @@ export async function generateMetadata(
  
   return {
     title: 'Jack Antoine Charlot - French Director - Work',
-    description: `Discover Jack Antoine Charlot\'s work as a director on ${project.title.rendered}.`,
+    description: `Discover Jack Antoine Charlot\'s work as a director: ${project.title.rendered}.`,
   }
 }
