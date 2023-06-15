@@ -1,6 +1,7 @@
 'use client';
 
-import ReactPlayer from 'react-player';
+import dynamic from 'next/dynamic';
+const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
 
 interface VideoFullBackgroundProps {
   url: string;
@@ -10,6 +11,6 @@ interface VideoFullBackgroundProps {
 
 export default function VideoFullBackground({url, className, fixed}: VideoFullBackgroundProps) {
   return (
-    <ReactPlayer muted className={`${className ? className : ''} ${fixed ? 'fixed' : 'absolute'} z-0 top-0 !w-auto !min-w-full !min-h-full !max-h-none !max-w-none video-preview-player`} loop playsinline autoplay playing url={url} />
+    <ReactPlayer className={`${className ? className : ''} ${fixed ? 'fixed' : 'absolute'} z-0 top-0 !w-auto !min-w-full !min-h-full !max-h-none !max-w-none video-preview-player`} loop playsinline autoPlay playing muted url={url} />
   )
 }
