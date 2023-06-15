@@ -6,4 +6,5 @@ Allow: /
 Host: https://jaaack.fr/
 
 # Sitemaps
+Sitemap: https://jaaack.fr/sitemap-0.xml
 Sitemap: https://jaaack.fr/sitemap.xml
