@@ -98,3 +98,7 @@ a, p {
 .--flex-img {
   @apply flex items-center justify-center flex-col md:flex-row;
 }
+
+.has-image a {
+  @apply inline-block align-middle;
+}
