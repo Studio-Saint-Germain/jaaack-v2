@@ -64,6 +64,7 @@ body {
 a, p {
   @apply font-light;
 }
+/*
 .grid-item {
   @apply h-[49vh];
 }
@@ -90,6 +91,7 @@ a, p {
 .grid-item:nth-child(6n + 6) {
   grid-column: 5 / span 2;
 }
+  */
 
 .video-preview-player video {
   object-fit: cover;
@@ -102,3 +104,44 @@ a, p {
 .has-image a {
   @apply inline-block align-middle;
 }
+
+
+.--grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: .2rem;
+    grid-auto-flow: row dense;
+}
+
+.--grid > * {
+      min-height: 300px;
+    }
+
+.--grid>*:nth-child(4n) {
+    grid-column: span 2;
+    grid-row: span 2
+}
+
+.--grid>*:first-child {
+    grid-column: span 3;
+    grid-row: span 3
+}
+
+.--grid.tag>div:first-child,.--grid.showcase>div:first-child {
+    grid-column: span 2;
+    grid-row: span 2
+}
+
+.grid-item-mosaic {
+    position: relative;
+    overflow: hidden
+}
+
+@media (max-width: 991px) {
+    .--grid {
+        display: block;
+    }
+    .--grid > * {
+      height: 30vh;
+    }
+  }
