@@ -13,7 +13,6 @@ const ABOUT_PAGE_ID = 16;
 export default async function About() {
   const pageData = await pagesApi.getPageById(ABOUT_PAGE_ID);
   const backgroundVideo = pageData.acf.background_video;
-  console.log(pageData)
 
   return (
     <>
