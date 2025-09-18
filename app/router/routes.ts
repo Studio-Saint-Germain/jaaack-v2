@@ -13,10 +13,6 @@ export const AppRoutes = [
         label: 'about' as const,
     } as AppRoute,
     {
-        path: '/awards' as const,
-        label: 'awards' as const,
-    } as AppRoute,
-    {
         path: '/contact' as const,
         label: 'contact' as const,
     } as AppRoute,

@@ -2,15 +2,15 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useState } from 'react';
-import NavigationMenu from '../navigation-menu/navigation-menu';
 import { usePathname } from 'next/navigation';
+import { useState } from 'react';
+import NavigationMenu from '../navigation-menu/navigation-menu';
 
 interface HeaderProps {
-    className?: string;
+  className?: string;
 }
 
-export default function Header({className}: HeaderProps) {
+export default function Header({ className }: HeaderProps) {
   const pathname = usePathname();
   const isHomePage = pathname === "/";
   const [displayMobileMenu, setDisplayMobileMenu] = useState(false);
