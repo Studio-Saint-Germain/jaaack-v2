@@ -57,6 +57,13 @@ body {
   @apply font-semibold;
 }
 
+.about-logo {
+  @apply md:mb-20;
+}
+
+.--recognition {
+  @apply mt-10;
+}
 .link-container:hover .link-item {
   opacity: 0.3;
 }

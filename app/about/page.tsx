@@ -22,7 +22,7 @@ export default async function About() {
           <h1 className="hidden page-title mt-16 md:mt-0 text-white leading-none font-semibold" dangerouslySetInnerHTML={{ __html: pageData.title.rendered }}></h1>
           <div className="text-white page-description --small text-md font-light" dangerouslySetInnerHTML={{ __html: pageData.content.rendered }}></div>
           <div className="mt-16">
-            <Link className="text-xl text-white underline" href='/contact'>Contact & booking</Link>
+            <Link className="text-white underline" href='/contact'>Contact & booking</Link>
           </div>
         </div>
         <Footer className="md:absolute" />
