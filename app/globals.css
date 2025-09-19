@@ -49,6 +49,10 @@ body {
   @apply mb-10 text-lg;
 }
 
+.page-description.--small p {
+  @apply mb-4 md:max-w-5xl;
+}
+
 .page-description strong {
   @apply font-semibold;
 }
