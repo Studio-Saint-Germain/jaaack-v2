@@ -50,7 +50,7 @@ body {
 }
 
 .page-description.--small p {
-  @apply mb-4 md:max-w-5xl md:mr-[336px];
+  @apply mb-4 md:max-w-5xl text-base md:mr-[400px];
 }
 
 .page-description strong {
