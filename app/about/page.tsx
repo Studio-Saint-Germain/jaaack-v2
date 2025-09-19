@@ -19,8 +19,8 @@ export default async function About() {
       <main className="min-h-screen relative page-container">
         {backgroundVideo && <VideoFullBackground fixed url={backgroundVideo} />}
         <div className="relative p-6 pt-20 md:p-10 md:ml-16 md:max-w-5xl">
-          <h1 className="page-title mt-16 md:mt-0 text-white leading-none font-semibold" dangerouslySetInnerHTML={{ __html: pageData.title.rendered }}></h1>
-          <div className="text-white page-description mt-10 text-xl font-light" dangerouslySetInnerHTML={{ __html: pageData.content.rendered }}></div>
+          <h1 className="hidden page-title mt-16 md:mt-0 text-white leading-none font-semibold" dangerouslySetInnerHTML={{ __html: pageData.title.rendered }}></h1>
+          <div className="text-white page-description text-md font-light" dangerouslySetInnerHTML={{ __html: pageData.content.rendered }}></div>
           <div className="mt-16">
             <Link className="text-xl text-white underline" href='/contact'>Contact & booking</Link>
           </div>

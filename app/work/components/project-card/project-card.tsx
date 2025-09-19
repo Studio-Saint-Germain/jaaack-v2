@@ -7,7 +7,6 @@ import { useState } from 'react';
 
 interface ProjectCardProps {
     project: Project;
-    hasSpecialTitle: boolean;
 };
 
 export interface VideoInfos {
@@ -16,7 +15,7 @@ export interface VideoInfos {
     title: string;
 }
 
-export default function ProjectCard({ project, hasSpecialTitle }: ProjectCardProps) {
+export default function ProjectCard({ project }: ProjectCardProps) {
     const initialBkg = !!project._embedded['wp:featuredmedia'] ? project._embedded['wp:featuredmedia'][0].source_url : '';
     const [backgroundVideo, setBackgroundVideo] = useState<string>();
     const router = useRouter();
@@ -29,7 +28,7 @@ export default function ProjectCard({ project, hasSpecialTitle }: ProjectCardPro
             className='text-white text-center bg-cover block bg-center text-xl cursor-pointer grid-item relative h-49vh overflow-hidden'
         >
             {backgroundVideo && <VideoFullBackground url={backgroundVideo} />}
-            <div className={`bg-black bg-opacity-10 !h-full w-full relative flex ${hasSpecialTitle ? 'items-end justify-start p-6' : 'items-center justify-center p-12'}`}>
+            <div className={`bg-black bg-opacity-10 !h-full w-full relative flex items-end justify-start p-6`}>
                 <p dangerouslySetInnerHTML={{ __html: project.title.rendered }} key={project.id}></p>
             </div>
         </Link>
