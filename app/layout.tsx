@@ -1,9 +1,14 @@
+import { Analytics } from '@vercel/analytics/react';
+import { Roboto_Mono } from 'next/font/google';
 import localFont from 'next/font/local';
 import Navigation from './components/header/header';
-import './globals.css';
 import { HtmlHead } from './components/htmlHead/htmlHead';
-import { Analytics } from '@vercel/analytics/react';
+import './globals.css';
 
+
+const geist = Roboto_Mono({
+  subsets: ['latin'],
+})
 const satoshi = localFont({
   src: './assets/fonts/satoshi/Satoshi-Variable.woff2',
 });
@@ -18,9 +23,9 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <head>
-      <HtmlHead />
+        <HtmlHead />
       </head>
-      <body className={satoshi.className}>
+      <body className={geist.className}>
         <Navigation />
         {children}
         <Analytics />
