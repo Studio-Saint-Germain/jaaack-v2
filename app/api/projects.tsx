@@ -32,7 +32,7 @@ export interface Project {
 }
 
 async function getProjects(extraParams?: string[]): Promise<Project[]> {
-    let params = '?per_page=100';
+    let params = '?per_page=100&orderby=menu_order&order=asc';
     if (extraParams) {
         params += `&${extraParams.join('&')}`;
     };
