@@ -6,6 +6,7 @@ import VideoFullBackground from "../components/video-full-background/video-full-
 export const metadata = {
   title: 'Jack Antoine Charlot - Director & Animation Director - About',
   description: 'Discover Jack Antoine Charlot, an award-winning director and animation expert. Uncover his creative brilliance and captivating storytelling.',
+  alternates: { canonical: '/about' },
 }
 
 const ABOUT_PAGE_ID = 16;

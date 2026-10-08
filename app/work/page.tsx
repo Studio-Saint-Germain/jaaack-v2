@@ -4,6 +4,7 @@ import ProjectCard from "./components/project-card/project-card";
 export const metadata = {
   title: 'Jack Antoine Charlot - Director & Animation Director - Work',
   description: 'Explore the award-winning work of Jack Antoine Charlot, a visionary director and animation expert. Discover captivating storytelling and breathtaking artistry.',
+  alternates: { canonical: '/work' },
 }
 
 export default async function Work() {
@@ -13,7 +14,7 @@ export default async function Work() {
       <main className="flex min-h-screen flex-col items-center justify-between md:pl-16 md:py-0">
         <div className="w-full gap-0 --grid">
           {projects.map((project, i) => (
-            <ProjectCard project={project} key={project.id} />
+            <ProjectCard project={project} isFirst={i === 0} key={project.id} />
           ))}
         </div>
       </main>

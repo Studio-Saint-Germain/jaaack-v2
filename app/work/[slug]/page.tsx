@@ -28,5 +28,6 @@ export async function generateMetadata(
   return {
     title: 'Jack Antoine Charlot - French Director - Work',
     description: `Discover Jack Antoine Charlot\'s work as a director: ${project.title.rendered}.`,
+    alternates: { canonical: `/work/${params.slug}` },
   }
 }

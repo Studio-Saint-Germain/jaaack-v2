@@ -107,10 +107,6 @@ a, p {
 }
   */
 
-.video-preview-player video {
-  object-fit: cover;
-}
-
 .--flex-img {
   @apply flex items-center justify-center flex-col md:flex-row;
 }
