@@ -8,6 +8,10 @@ const nextConfig = {
             port: '',
             pathname: '/wp-content/uploads/*/*/**',
           },
+          {
+            hostname: 'jaaack.local',
+            pathname: '/wp-content/uploads/*/*/**',
+          },
         ],
     },
     videos: {

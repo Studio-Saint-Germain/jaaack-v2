@@ -7,6 +7,7 @@ import VideoFullBackground from "../components/video-full-background/video-full-
 export const metadata = {
   title: 'Jack Antoine Charlot - Director & Animation Director - Contact',
   description: 'Contact Jack Antoine Charlot, a renowned Director and animation director. Get in touch with this talented professional for your creative projects.',
+  alternates: { canonical: '/contact' },
 }
 const CONTACT_PAGE_ID = 18;
 
