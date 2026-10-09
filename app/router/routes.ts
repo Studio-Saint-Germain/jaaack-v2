@@ -9,6 +9,10 @@ export const AppRoutes = [
         label: 'work' as const,
     } as AppRoute, 
     {
+        path: '/drawings' as const,
+        label: 'drawings' as const,
+    } as AppRoute,
+    {
         path: '/about' as const,
         label: 'about' as const,
     } as AppRoute,
