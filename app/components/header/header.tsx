@@ -4,19 +4,21 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
+import { AppRoute } from '@/app/router/routes';
 import NavigationMenu from '../navigation-menu/navigation-menu';
 
 interface HeaderProps {
   className?: string;
+  routes: AppRoute[];
 }
 
-export default function Header({ className }: HeaderProps) {
+export default function Header({ className, routes }: HeaderProps) {
   const pathname = usePathname();
   const isHomePage = pathname === "/";
   const [displayMobileMenu, setDisplayMobileMenu] = useState(false);
   return (
     <header className={`${className ? className : ''} z-10 flex items-center w-full pr-6 md:pr-0 md:border-r md:border-solid ${isHomePage ? 'border-white' : 'md:border-black md:bg-white'} md:w-16 md:h-screen fixed md:top-0 py-4 md:flex-col md:items-stretch justify-between`}>
-      <NavigationMenu closeMobileMenu={() => setDisplayMobileMenu(!displayMobileMenu)} isVisible={displayMobileMenu} isHomePage={isHomePage} />
+      <NavigationMenu routes={routes} closeMobileMenu={() => setDisplayMobileMenu(!displayMobileMenu)} isVisible={displayMobileMenu} isHomePage={isHomePage} />
       <Link href="/">
         <Image
           src="/logo.png"

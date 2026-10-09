@@ -3,6 +3,8 @@ import { Metadata } from 'next';
 import { Roboto_Mono } from 'next/font/google';
 import localFont from 'next/font/local';
 import Navigation from './components/header/header';
+import { drawingsApi } from './api/drawings';
+import { AppRoutes } from './router/routes';
 import defaultImage from './assets/images/default.jpg';
 import './globals.css';
 
@@ -37,13 +39,14 @@ interface RootLayoutProps {
   children: React.ReactNode
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: RootLayoutProps) {
+  const routes = (await drawingsApi.hasDrawings()) ? AppRoutes : AppRoutes.filter((route) => route.path !== '/drawings');
   return (
     <html lang="fr">
       <body className={geist.className}>
-        <Navigation />
+        <Navigation routes={routes} />
         {children}
         <Analytics />
       </body>

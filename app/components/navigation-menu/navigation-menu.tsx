@@ -1,5 +1,5 @@
 'use client';
-import { AppRoute, AppRoutes } from '@/app/router/routes';
+import { AppRoute } from '@/app/router/routes';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -11,9 +11,10 @@ interface NavigationMenuProps {
   isHomePage?: boolean;
   isVisible?: boolean;
   closeMobileMenu?: () => void;
+  routes: AppRoute[];
 }
 
-export default function NavigationMenu({ closeMobileMenu, isVisible }: NavigationMenuProps) {
+export default function NavigationMenu({ closeMobileMenu, isVisible, routes }: NavigationMenuProps) {
   const pathname = usePathname();
   const isHomePage = pathname === "/";
 
@@ -26,7 +27,7 @@ export default function NavigationMenu({ closeMobileMenu, isVisible }: Navigatio
         <li className="md:hidden">
           <span onClick={() => closeMobileMenu && closeMobileMenu()} className={`p-4 text-lg uppercase cursor-pointer absolute top-4 right-4`}>Close</span>
         </li>
-        {AppRoutes.map((route: AppRoute) => (
+        {routes.map((route: AppRoute) => (
           <li key={route.label} className="my-4 md:my-0 md:flex md:items-center md:justify-center">
             <Link onClick={() => closeMobileMenu && closeMobileMenu()} className={`md:text-b-to-t p-4 uppercase ${isHomePage ? 'md:text-white' : ''} cursor-pointer ${pathname.split('/').includes(route.path.slice(1)) ? "font-semibold" : ""}`} href={route.path}>{route.label}</Link>
           </li>
