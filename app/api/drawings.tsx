@@ -6,7 +6,9 @@ export interface Drawing {
     acf: {
         media: {
             url: string;
-            mime_type: string; width: number; height: number;
+            mime_type: string;
+            width: number;
+            height: number;
             alt: string;
         }
     }
@@ -21,6 +23,17 @@ async function getDrawings(): Promise<Drawing[]> {
     return res.json();
   }
 
+// Menu link is hidden until the client adds a first drawing; API down = hidden too, never breaks the layout
+async function hasDrawings(): Promise<boolean> {
+    try {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_WORDPRESS_API_ENDPOINT}/drawings?per_page=1&_fields=id`, { next: { revalidate: 10 } });
+        return res.ok && (await res.json()).length > 0;
+    } catch {
+        return false;
+    }
+}
+
 export const drawingsApi = {
     getDrawings,
+    hasDrawings,
 }
