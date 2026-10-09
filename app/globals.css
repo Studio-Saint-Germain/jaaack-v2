@@ -155,3 +155,22 @@ a, p {
       height: 30vh;
     }
   }
+/* Drawings: cropped cells on desktop, natural ratio on mobile */
+.--grid.drawings img, .--grid.drawings video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 991px) {
+    .--grid.drawings > * {
+      height: auto;
+      min-height: 0;
+    }
+    .--grid.drawings img, .--grid.drawings video {
+      position: static;
+      height: auto;
+    }
+}
