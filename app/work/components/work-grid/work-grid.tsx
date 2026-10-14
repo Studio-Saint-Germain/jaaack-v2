@@ -29,7 +29,10 @@ export default function WorkGrid({ projects, categories }: WorkGridProps) {
           </li>
         ))}
       </ul>
-      <div className="w-full gap-0 --grid">
+      {/* Under 4 projects the mosaic leaves holes: split the remaining height into equal columns instead */}
+      <div className={visibleProjects.length < 4
+        ? 'w-full flex-1 flex flex-col md:flex-row gap-[.2rem] md:[&>*]:flex-1 md:[&>*]:!h-auto'
+        : 'w-full gap-0 --grid'}>
         {visibleProjects.map((project, i) => (
           <ProjectCard project={project} isFirst={i === 0} key={project.id} />
         ))}
