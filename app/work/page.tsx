@@ -15,7 +15,7 @@ export default async function Work() {
   ]);
   return (
     <>
-      <main className="flex min-h-screen flex-col items-center justify-between md:pl-16 md:py-0">
+      <main className="flex min-h-screen flex-col items-center md:pl-16 md:py-0">
         {/* Highlighted only drives the home page, not a filter */}
         <WorkGrid projects={projects} categories={categories.filter((category) => category.id !== HIGHLIGHTED_CATEGORY_ID)} />
       </main>
