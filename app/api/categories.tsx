@@ -1,5 +1,5 @@
 
-const HIGHLIGHTED_CATEGORY_ID = 3;
+export const HIGHLIGHTED_CATEGORY_ID = 3;
 
 export interface Category {
     id: number;
@@ -11,7 +11,7 @@ export interface Category {
 }
 
 async function getCategories(): Promise<Category[]> {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_WORDPRESS_API_ENDPOINT}/categories`);
+    const res = await fetch(`${process.env.NEXT_PUBLIC_WORDPRESS_API_ENDPOINT}/categories?per_page=100`, { next: { revalidate: 10 } });
     if (!res.ok) {
       throw new Error('Failed to fetch data');
     }
